@@ -1,0 +1,83 @@
+body{
+    background-color: black;
+}
+
+ul li a{
+   
+}
+
+header{
+    position: fixed;
+}
+
+a:hover{
+    background-color: black;
+    color: grey;
+    /* box-shadow: 10px 10px 20px solid black; */
+    border-radius: 2rem;
+    box-shadow: 0 0 10px black;
+
+}
+
+/* .carousel-item {
+    transition: transform 0.1s ease, opacity 0.5s ease; 
+} */
+
+#songs{
+    background-color: black;
+    /* background-image: url(https://images.pexels.com/photos/6985045/pexels-photo-6985045.jpeg?cs=srgb&dl=pexels-codioful-6985045.jpg&fm=jpg); */
+}
+.songs-1{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    gap: 0.1rem;
+    margin-top: 10rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    /* background-color: black; */
+    width: auto;
+    height: auto;
+}
+
+.s1,.s2,.s3,.s4,.s5{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    border-radius :2rem;
+    gap: 0rem;
+    box-shadow: 10 10 10px white
+    ;
+}
+
+#home{
+    border-radius: 3rem;
+}
+
+img{
+    border-radius: 1rem;
+    /* width: 180px;
+    height: 180px; */
+}
+
+img:hover{
+    box-shadow: 10px 10px 20px white;
+    
+}
+
+h3 i{
+    color: #cccccc;
+}
+
+h3 i:hover{
+    box-shadow: 0px 0px 20px;
+    transform: scale(1.1);
+
+}
+
+.artist{
+    border-radius: 10rem;
+    width: 180px;
+    box-shadow: 0 0 10px;
+
+}

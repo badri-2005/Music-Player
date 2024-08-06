@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>BeatBreeze</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="box-shadow: 10 10 10px white; background-color: url(https://images.pexels.com/photos/6985045/pexels-photo-6985045.jpeg?cs=srgb&dl=pexels-codioful-6985045.jpg&fm=jpg);">
+        <div class="container-fluid" style="background-color: url(https://images.pexels.com/photos/6985045/pexels-photo-6985045.jpeg?cs=srgb&dl=pexels-codioful-6985045.jpg&fm=jpg);">
+          <h2 style="font-family: Bungee Spice, sans-serif;"><i class="fa-brands fa-soundcloud fa-beat"></i>&nbsp;&nbsp;BEATBREEZE</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 15rem;">
+              <li class="nav-item " style="margin-left: 2rem;">
+                <a class="nav-link active" style=" color: grey" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item" style="margin-left: 2rem;">
+                <a class="nav-link active" style=" color: grey" href="#songs">Songs</a>
+              </li>
+              <li class="nav-item" style="margin-left: 2rem;">
+                <a class="nav-link active" style=" color: grey" href="#podcast">Podcast</a>
+              </li>
+              <li class="nav-item" style="margin-left: 2rem;">
+                <a class="nav-link active" style=" color: grey" href="#artist">Artists</a>
+              </li>
+              <li class="nav-item" style="margin-left: 2rem;">
+                <a class="nav-link active" style=" color: grey" href="#trending" >Trending Songs</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search Songs" aria-label="Search" >
+              <!-- style="border-radius: 2rem; box-shadow: 0 0 20px black;" -->
+              <!-- <button class="btn btn-outline-dark" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+<br><br>
+      <section id="home">
+        <br><br>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/66855f81237ec4652a62c718/BANNER_9271663942438.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6688ed23f6981e2faab04ee2/BANNER_19944229887324.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/669be56c06e0240e96fb9805/BANNER_21719586197555.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6690f6a8d5a3b94f65dc7c28/BANNER_14372832606680.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.wynk.in/unsafe/880x307/filters:no_upscale():strip_exif():format(webp)/https://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/668fbd9ca0cef22c4d54c37d/BANNER_16786785698376.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+      </section>
+<br><br>
+
+      <section id="songs">
+        <h1 style="text-align: center; color:white; font-family: Bungee Spice, sans-serif;">Songs</h1>
+<br><br>
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <figure>
+              <img src="https://img.freepik.com/free-psd/saturday-night-party-social-media-instagram-template_505751-3745.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px">
+              <figcaption style="color: aliceblue;line-height: 3rem;">English</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure>
+              <img src="https://img.freepik.com/free-psd/saturday-party-social-media-template_505751-2936.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px"alt="">
+              <figcaption style="color: aliceblue;line-height: 3rem;">Bengal</figcaption>
+              </figure>
+            </div>
+            <div class="col">
+              <figure>
+              <img src="https://img.freepik.com/free-psd/poster-urban-music-design-template_23-2149081157.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px"alt="">
+              <figcaption style="color: aliceblue;line-height: 3rem;">Malayalam</figcaption>
+
+            </figure>
+            </div>
+            
+            <div class="col">
+              <figure>
+            <img src="https://img.freepik.com/free-psd/dust-concept-flyer-square-template_23-2148744935.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px" alt="">
+            <figcaption style="color: aliceblue;line-height: 3rem;">Tamil</figcaption>
+
+          </figure>
+          </div>
+          <div class="col">
+            <figure>
+            <img src="https://img.freepik.com/free-psd/dust-concept-flyer-square-template_23-2148744937.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user"  width="200px" height="220px" alt="">
+          <figcaption style="color: aliceblue;line-height: 3rem;">Hindi</figcaption>  
+          </figure>
+          </div>
+
+
+          </div>
+        </div>
+<br><br><br>
+        <!-- <nav aria-label="Page navigation example" >
+          <ul class="pagination" style="justify-content: center; color: black;">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous" style="color: black">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next" style="color: black">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+</section>
+<section id="artist">
+  <h1 style="text-align: center; color:white; font-family: Bungee Spice, sans-serif;">Top Artists</h1>
+  <br>
+        <div class="container text-center">
+          <div class="row align-items-start">
+              <div class="col">
+                <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/discovery-prod-zion/zion/1673244784213-Prateek_Kuhad.jpg" class=artist alt="">
+              </div>
+              <div class="col">
+                <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/discovery-prod-zion/zion/1696453099940-Nikhita_Gandhi.png" class=artist alt="">
+              </div>
+              <div class="col">
+                <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_wyndie/c64ec93b-9bbf-4182-ae34-25ebf99e044b/1721297730300/file-1721297730022-222561751-IMG-8093.png" class=artist alt="">
+              </div>
+              <div class="col">
+                <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/artists/profile/5ed7758f7c0c58409e2c4317.png" class=artist alt="">
+              </div>
+              <div class="col">
+                <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_wyndie/e5e23fcb-d242-4dee-8bd5-0516760ae34e/1706083069589/file-1706083066798-81393113-DSC00775%202.png" class=artist alt="">
+              </div>
+          </div>
+        </div>
+</section>
+      
+<br><br><br><br>
+<section id="podcast">
+  <br><br><br>
+        <h1 style="text-align: center; color: white; font-family: Bungee Spice, sans-serif;">Podcast</h1>
+        <br>
+        <div class="card-group ">
+          <div class="card m-5">
+            <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/https://megaphone.imgix.net/podcasts/a9aa4c20-6427-11ee-8a3f-17dd328e34d5/image/c06368fe264804588693404a7c868b09.jpg?ixlib=rails-4.3.1&max-w=3000&max-h=3000&fit=crop&auto=format,compress" class="card-img-top" width="200px" height="220px" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mahabharat</h5>
+              <p class="card-text">E
+                Mahabharat Ke Paatra (Characters of Epic Mahabharat Podcast in Hindi) New Episodes</p>
+              <p class="card-text"><small class="text-body-secondary">uploaded on 21/7/24</small></p>
+            </div>
+          </div>
+          <div class="card m-5">
+            <img src="https://img.wynk.in/unsafe/45x45/filters:no_upscale():strip_exif():format(webp)/https://files.hubhopper.com/podcast/313926/baarish-intimate-curar-podcast-sad-hindi-shayari.jpg?v=1633073836&s=wynk-hls" class="card-img-top " width="200px" height="220px" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Baarish</h5>
+              <p class="card-text">Intimate Curar || Podcast || Sad Hindi Shayari</p>
+              <p class="card-text"><small class="text-body-secondary">uploaded on 25/7/24</small></p>
+            </div>
+          </div>
+          <div class="card m-5">
+            <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/https://www.omnycontent.com/d/playlist/e0dce4b3-2eb8-48cb-822c-af1d00e03e20/55b899d7-464c-4290-985e-af4d006f0c92/a588e9ef-98c0-4cb7-b034-af4d006f0cbc/image.jpg?t=1668408260&size=Large" class="card-img-top" width="200px" height="220px" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Finance Podcast</h5>
+              <p class="card-text">A Sip of Finance English Podcast</p>
+              <p class="card-text"><small class="text-body-secondary">uploaded on 26/7/24</small></p>
+            </div>
+          </div>
+        </div>
+      </section>
+<br><br><br>
+      <section id="trending">
+        <h1 style="text-align: center; color: white; font-family: Bungee Spice, sans-serif;">Trending Songs</h1>
+        <br><br>
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <img src="https://img.freepik.com/free-psd/saturday-night-party-social-media-instagram-template_505751-3745.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px">
+
+            </div>
+            <div class="col">
+              <img src="https://img.freepik.com/free-psd/saturday-party-social-media-template_505751-2936.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px"alt="">
+
+            </div>
+            <div class="col">
+              <img src="https://img.freepik.com/free-psd/poster-urban-music-design-template_23-2149081157.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px"alt="">
+
+            </div>
+
+            <div class="col">
+            <img src="https://img.freepik.com/free-psd/dust-concept-flyer-square-template_23-2148744935.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user" width="200px" height="220px" alt="">
+          </div>
+          <div class="col">
+            <img src="https://img.freepik.com/free-psd/dust-concept-flyer-square-template_23-2148744937.jpg?size=626&ext=jpg&ga=GA1.1.2086577022.1699793086&semt=ais_user"  width="200px" height="220px" alt="">
+          </div>
+
+
+          </div>
+        </div>
+
+
+      </section>
+      <br><br><br>
+      <!-- <h1 style="font-family:Bungee Spice, sans-serif; text-align: center;"> Log In</h1>
+      <br><br>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-left: 47%; background-color: aliceblue; color: black;">Log In</button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel" style="text-align: center;">Log In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          
+        </div>
+      </div> -->
+      <br><br><br><br>
+      <button style="margin-left: 45%;" class="btn " type="button" id="stay-tuned" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Stay Tuned</button>
+
+<div class="offcanvas offcanvas-end bg-dark"  data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title" id="offcanvasScrollingLabel" style="color: white;">  <img src="data:image/png;base64,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" width="40px" height="40px"   alt="">&nbsp;&nbsp;BEATBREEZE</h4>
+    <button type="button" style= " background-color: white;"class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <h5 style="text-align: center;color: white;">Stay Tuned By Signing up</h5><br>
+    <p  style="text-align: center; font-size: large;color: white;">Continue With:</p>
+    <div class="d-inline-flex align-items-center justify-items-center mx-auto p-1 ml-5" style="border: 2px solid white;border-radius: 2rem; ">
+      <img src="data:image/png;base64,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" width="40px" height="40px"  alt=""> <h4 style="color: white;font-size: 20px;">Google</h4>
+    </div>
+    <div class="d-inline-flex align-items-center justify-items-center mx-4 p-1  " style="border: 2px solid white;border-radius: 2rem; ">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEX///8Are7xZCGNxT7/wg7//PrxYBf9/vv4/PP/+/D/wQD/89KR1fYAq+74/v//vwD/5a7g8vz0kGn3s5mhz2KHwi/R5rjxXQzF4aNbwfL/zEL/9eGs1HkAp+2KxDfQ8Pv5xrP0i2L3rJC524/c7MnwVQCCwCH718nP5rHn8tnb8/z/89BNvvH/yS/t+P1kI0w3AAABQElEQVR4nO3bSVLCYACEUZyIoIiAGEckSpzl/sezysRy6eLvcuP7DtBV7wA9GEiSJEmSJEmSJEmSJEnpDiL1Y1WmKHDdzMtr7jvi4cNNok1UuGiH5dVNLzxbrsp7PM8K693yhvNv4WqvvCUhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISHhL8K2Lq/9+QEHCv+AnxaJ1p2wer5I9BIVSpLK294leu3GqqNEb6Oo8Hgn0eXJ19joarxf3vg0K5wEgJOocEpISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEj474W3id574cc0UVa4nUXq164jZd/qkiRJkiRJkiRJkiTpD/oEbCRgHsRo5swAAAAASUVORK5CYII=" width="40px" height="40px"  alt=""> <h4 style="color: white;font-size: 20px;">Microsoft</h4>
+    </div>
+   <h5 style="text-align: center; color: white; margin-top: 20px;">Or</h5>
+    <form action="" id="sign-up">
+    <input type="text" placeholder="Username" required >
+    <input type="email" name="email" id="mail" placeholder="Email" required>
+    <input type="password" placeholder="Password" required><br><br>
+    <button type="submit" style="background-color: black;color: white;"> Login </button><br><br>
+    <p style="color: white;"> Don't have an account ? <a href=""> Sign up</a></p>
+    </form>
+  </div>
+</div>
+</div>
+      <hr style="color: white;">
+      <div class="card text-center" style="background-color: black; color: white;">
+        <div class="card-header">
+          BeatBreeze
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Listen to Us</h5>
+          <p class="card-text">Don't forget to install BeatBreeze on your Device</p>
+          <a href="#" class="btn btn-dark"><img src="https://wynk.in/_next/static/media/play-store.28ce99c9.png" alt="" style="box-shadow: none;"> </a>&nbsp; &nbsp; <a href="#" class="btn btn-dark"><img src="https://wynk.in/_next/static/media/apple-store.fd317c9d.png" alt="" style="box-shadow: none;"> </a> 
+        </div>
+      </div>
+      
+      
+      <h3 style="text-align: center; color: gray;"><br> Follow On <br><br> <h3 style="text-align: center;">&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-instagram fa-1.5x"></i>&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-facebook fa-1.5x"></i>&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-x-twitter fa-1.5x"></i></h3></h3>
+                <h3 style="text-align: center; color: gray;"> <br>&copy;   BeatBreeze...All rights are reserved</h3>
+        
+      
+      
+</body>
+</html>
+
